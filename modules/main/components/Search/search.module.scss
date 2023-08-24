@@ -1,0 +1,36 @@
+.form {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  font-size: 22px;
+}
+@mixin base {
+  height: 50px;
+  background-color: #fff;
+  color: black;
+  border-radius: 5px;
+}
+.input {
+  @include base;
+  width: 650px;
+  padding: 15px;
+  font-size: 28px;
+  letter-spacing: 1px;
+  &::placeholder {
+    letter-spacing: normal;
+    font-size: 26px;
+    text-align: center;
+    color: #808080;
+  }
+}
+
+.btn {
+  @include base;
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -4,3 +4,10 @@ body, html {
   background-color: $main-bg;
   color: $default-text;
 }
+
+a {
+  color: $default-text;
+  &:hover {
+    color: $hover-link;
+  }
+}
