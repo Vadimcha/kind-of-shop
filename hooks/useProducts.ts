@@ -1,22 +1,15 @@
+'use client';
 import { useQuery } from 'react-query';
 import axios from 'axios';
+import { IProduct } from '@/models/IProduct';
 
-export interface IProduct {
-  id: number,
-  title: string,
-  price: string,
-  category: string,
-  description: string,
-  image: string,
-}
-
-export const useProducts = (productId: number) => {
+export const useProducts = () => {
   return useQuery({
     queryFn: async () => {
       const { data } = await axios.get(
-        `https://fakestoreapi.com/products/${productId}`
+        'https://fakestoreapi.com/products'
       );
-      return data as IProduct;
+      return data as IProduct[];
     },
   });
 };

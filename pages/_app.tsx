@@ -1,3 +1,4 @@
+'use client';
 import type { AppProps } from 'next/app';
 import './reset.css';
 import './global.scss';
