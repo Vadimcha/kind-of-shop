@@ -7,16 +7,17 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 function sliceTitle(title: string) {
+  const length = 20;
   return (
-    title.length > 23 ?
-      `${title.slice(0, 24)}...` :
+    title.length >= length ?
+      `${title.slice(0, length)}..` :
       title
   );
 }
 
 const ProductCard = (product: IProduct) => {
   return (
-    <Link href={''} className={styles.card}>
+    <Link href={`product/${product.id}`} className={styles.card}>
       <div className={styles.image_wrap}>
         <Image
           src={product.image}

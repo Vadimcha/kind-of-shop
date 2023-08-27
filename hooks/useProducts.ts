@@ -13,3 +13,14 @@ export const useProducts = () => {
     },
   });
 };
+
+export const useProduct = (id: string | number) => {
+  return useQuery({
+    queryFn: async() => {
+      const { data } = await axios.get(
+        `https://fakestoreapi.com/products/${id}`
+      );
+      return data as IProduct;
+    },
+  });
+};

@@ -13,10 +13,11 @@ const Header = () => {
     <header className={styles.header}>
       <Link href={'/'}>
         <Image
-          src={'img/logo.svg'}
+          src={`${process.env.NEXT_PUBLIC_URL}img/logo.svg`}
           width={100}
           height={35}
           alt='Logo'
+          style={{ pointerEvents: 'none' }}
         />
       </Link>
       <ul className={styles.nav}>
