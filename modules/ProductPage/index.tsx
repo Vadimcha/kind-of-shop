@@ -8,6 +8,7 @@ import Header from '@/components/Header';
 import styles from './productPage.module.scss';
 import Image from 'next/image';
 import Bottom from '@/modules/ProductPage/components/Bottom';
+import Head from 'next/head';
 
 const ProductPage = () => {
   const router = useRouter();
@@ -15,6 +16,9 @@ const ProductPage = () => {
   const { data: product, isLoading, isSuccess, error } = useProduct(productId);
   return (
     <>
+      <Head>
+        <title>Kind of shop | Product Page</title>
+      </Head>
       <Header />
       { isLoading ?
         <p>Loading data...</p> :
@@ -31,7 +35,7 @@ const ProductPage = () => {
               />
               <Settings product={product} />
             </div>
-            <Bottom productId={Number(productId)} price={product?.price} />
+            <Bottom productId={Number(productId)} price={Number(product?.price)} />
           </div>:
           <p>{String(error)}</p>
       }

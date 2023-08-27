@@ -25,7 +25,7 @@ const SearchPage = () => {
   return (
     <div>
       <Head>
-        <title>Kind of shop | Main Page</title>
+        <title>Kind of shop | Search Page</title>
       </Head>
       <Header />
       <div className={styles.content}>

@@ -1,11 +1,20 @@
 .card {
+  z-index: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+  &:hover {
+    .icon {
+      pointer-events: auto;
+      opacity: 100%;
+    }
+  }
 }
 
 .image_wrap {
+  position: relative;
+
   padding: 24px 60px;
   background-color: #171717;
   border: 1px solid #353535;
@@ -31,6 +40,27 @@
     font-weight: 600;
   }
   &_price {
+    color: #A1A0A0;
+  }
+}
+
+.icon {
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity .2s ease-in-out;
+  position: absolute;
+  height: 28px;
+  width: 28px;
+  right: 20px;
+  color: white;
+  &_like {
+    top: 20px;
+  }
+  &_cart {
+    bottom: 20px;
+  }
+  &:hover {
     color: #A1A0A0;
   }
 }
