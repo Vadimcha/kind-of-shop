@@ -1,4 +1,13 @@
 .content {
   margin-top: 80px;
   padding: 0 290px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.searchP {
+  font-size: 20px;
+  font-weight: bold;
 }
