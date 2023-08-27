@@ -15,7 +15,6 @@ const Search = () => {
     },
     onSubmit: values => {
       router.push(`${process.env.NEXT_PUBLIC_URL}/search/q=${values.search.toLowerCase()}`);
-      // alert(JSON.stringify(values));
     },
   });
   return (

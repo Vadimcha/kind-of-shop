@@ -3,19 +3,23 @@
   justify-content: space-between;
   align-items: center;
 
-  margin: 60px 112px 0 112px;
+  margin: 55px 100px 0 100px;
 }
 .nav {
   display: flex;
-  gap: 80px;
+  gap: 75px;
 
-  font-size: 24px;
+  font-size: 23px;
+  letter-spacing: 0.0125rem;
 }
 .icon {
-  height: 36px;
-  width: 36px;
-
+  height: 30px;
+  width: 30px;
+  color: white;
   &:last-child {
     margin-left: 35px;
+  }
+  &:hover {
+    color: #A1A0A0;
   }
 }

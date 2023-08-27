@@ -12,8 +12,12 @@ const Meta = ({ product }: {product: IProduct}) => {
           {product.category}
         </Link>
       </p>
-      <h3 className={`${bebas.className} ${styles.title}`}>{product.title}</h3>
-      <p className={styles.description}>{product.description}</p>
+      <h3 className={`${bebas.className} ${styles.title}`}>
+        {product.title?.length >= 35 ? `${product.title.slice(0, 35)}...` : product.title}
+      </h3>
+      <p className={styles.description}>
+        {product.description?.length >= 70 ? `${product.description.slice(0, 200)}...` : product.description}
+      </p>
     </div>
   );
 };

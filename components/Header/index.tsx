@@ -14,8 +14,8 @@ const Header = () => {
       <Link href={'/'}>
         <Image
           src={`${process.env.NEXT_PUBLIC_URL}img/logo.svg`}
+          height={20}
           width={100}
-          height={35}
           alt='Logo'
           style={{ pointerEvents: 'none' }}
         />
@@ -28,8 +28,8 @@ const Header = () => {
         ) }
       </ul>
       <div>
-        <BiShoppingBag className={styles.icon} />
         <CgProfile className={styles.icon} />
+        <BiShoppingBag className={styles.icon} />
       </div>
     </header>
   );

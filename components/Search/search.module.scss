@@ -2,26 +2,25 @@
   margin: 0 auto;
   display: flex;
   flex-direction: row;
-  gap: 20px;
+  gap: 15px;
   justify-content: center;
   align-items: center;
-  font-size: 22px;
 }
 @mixin base {
-  height: 50px;
+  height: 45px;
   background-color: #fff;
   color: black;
   border-radius: 5px;
 }
 .input {
   @include base;
-  width: 650px;
+  width: 575px;
   padding: 15px;
-  font-size: 28px;
+  font-size: 24px;
   letter-spacing: 1px;
   &::placeholder {
     letter-spacing: normal;
-    font-size: 26px;
+    font-size: 22px;
     text-align: center;
     color: #808080;
   }
@@ -33,4 +32,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
+  &:hover {
+    background-color: #9C9C9C;
+  }
 }
