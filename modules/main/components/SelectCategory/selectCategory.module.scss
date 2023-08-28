@@ -1,0 +1,52 @@
+.btn {
+  height: 45px;
+  background-color: #fff;
+  color: black;
+  border-radius: 5px;
+
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &:hover {
+    color: black;
+    background-color: #A1A0A0;
+  }
+}
+
+.container {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+  transition: all .2s ease-in-out;
+  z-index: 1;
+
+  padding: 12px;
+  font-size: 18px;
+  background-color: #171717;
+  color: white;
+  border: 1px solid #353535;
+  border-radius: 15px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  &__active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+.option {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  &_checkbox {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+  }
+  &_label {
+
+  }
+}

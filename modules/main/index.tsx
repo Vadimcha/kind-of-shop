@@ -1,11 +1,10 @@
 import styles from './main.module.scss';
 
-import React, { useEffect } from 'react';
+import React from 'react';
 import Header from '@/components/Header';
 import Head from 'next/head';
-import Search from '@/components/Search';
-import { Products } from '@/components/Products';
-import Image from 'next/image';
+import Search from '@/modules/main/components/Search';
+import { Products } from '@/modules/main/components/Products';
 
 const Main = () => {
   return (
