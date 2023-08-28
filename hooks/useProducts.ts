@@ -9,8 +9,10 @@ function search(product: IProduct, params: { [key: string]: string }) {
     return title.includes(params['q']);
   }
 }
+
 export const useProducts = (params?: { [key: string]: string }) => {
   const { data, isLoading, isSuccess, error } = useQuery({
+    queryKey: ['products'],
     queryFn: async () => {
       const { data } = await axios.get(
         'https://fakestoreapi.com/products'
@@ -33,6 +35,7 @@ export const useProducts = (params?: { [key: string]: string }) => {
 
 export const useProduct = (id: string | number) => {
   return useQuery({
+    queryKey: [`product-${id}`],
     queryFn: async () => {
       const { data } = await axios.get(
         `https://fakestoreapi.com/products/${id}`

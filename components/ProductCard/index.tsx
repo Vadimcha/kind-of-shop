@@ -18,8 +18,6 @@ function sliceTitle(title: string) {
   );
 }
 
-let like = false, inCart = false;
-
 const ProductCard = (product: IProduct) => {
   const { addToFavourites, addToCart, inFavourites, inCart } = useUserStore();
   return (
