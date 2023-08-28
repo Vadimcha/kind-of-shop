@@ -23,6 +23,8 @@
     "react-icons": "^4.10.1",
     "react-query": "^3.39.3",
     "sass": "^1.66.1",
-    "typescript": "5.1.6"
+    "simple-zustand-devtools": "^1.1.0",
+    "typescript": "5.1.6",
+    "zustand": "^4.4.1"
   }
 }

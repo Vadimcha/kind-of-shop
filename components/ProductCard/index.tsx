@@ -7,6 +7,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { AiFillHeart, AiOutlineHeart } from 'react-icons/ai';
 import { BsBag, BsBagDashFill } from 'react-icons/bs';
+import { useUserStore } from '@/store/userStore';
 
 function sliceTitle(title: string) {
   const length = 20;
@@ -18,14 +19,9 @@ function sliceTitle(title: string) {
 }
 
 let like = false, inCart = false;
-function addToFavorites() {
-  like = !like;
-}
-function addToCart() {
-  inCart = !inCart;
-}
 
 const ProductCard = (product: IProduct) => {
+  const { addToFavourites, addToCart, inFavourites, inCart } = useUserStore();
   return (
     <Link href={`product/${product.id}`} className={styles.card}>
       <div className={styles.image_wrap}>
@@ -36,13 +32,13 @@ const ProductCard = (product: IProduct) => {
           alt='Product Image'
           className={styles.image}
         />
-        <Link href={''} onClick={() => addToFavorites()}>
-          { like ?
+        <Link href={''} onClick={() => addToFavourites(product.id)}>
+          { inFavourites(product.id) ?
             <AiFillHeart className={`${styles.icon} ${styles.icon_like}`} /> :
             <AiOutlineHeart className={`${styles.icon} ${styles.icon_like}`} /> }
         </Link>
-        <Link href={''} onClick={() => addToCart()}>
-          { inCart ?
+        <Link href={''} onClick={() => addToCart(product.id)}>
+          { inCart(product.id) ?
             <BsBagDashFill className={`${styles.icon} ${styles.icon_cart}`} /> :
             <BsBag className={`${styles.icon} ${styles.icon_cart}`} /> }
         </Link>
