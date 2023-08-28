@@ -28,8 +28,8 @@ const Header = () => {
         ) }
       </ul>
       <div>
-        <CgProfile className={styles.icon} />
-        <BiShoppingBag className={styles.icon} />
+        <button><CgProfile className={styles.icon} /></button>
+        <button><BiShoppingBag className={styles.icon} /></button>
       </div>
     </header>
   );

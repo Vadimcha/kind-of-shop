@@ -23,31 +23,39 @@ let like = false, inCart = false;
 const ProductCard = (product: IProduct) => {
   const { addToFavourites, addToCart, inFavourites, inCart } = useUserStore();
   return (
-    <Link href={`product/${product.id}`} className={styles.card}>
-      <div className={styles.image_wrap}>
-        <Image
-          src={product.image}
-          width={200}
-          height={200}
-          alt='Product Image'
-          className={styles.image}
-        />
-        <Link href={''} onClick={() => addToFavourites(product.id)}>
-          { inFavourites(product.id) ?
-            <AiFillHeart className={`${styles.icon} ${styles.icon_like}`} /> :
-            <AiOutlineHeart className={`${styles.icon} ${styles.icon_like}`} /> }
-        </Link>
-        <Link href={''} onClick={() => addToCart(product.id)}>
-          { inCart(product.id) ?
-            <BsBagDashFill className={`${styles.icon} ${styles.icon_cart}`} /> :
-            <BsBag className={`${styles.icon} ${styles.icon_cart}`} /> }
-        </Link>
-      </div>
-      <div className={styles.meta}>
-        <p className={styles.meta_title}>{sliceTitle(product.title)}</p>
-        <p className={styles.meta_price}>{`$${product.price}`}</p>
-      </div>
-    </Link>
+    <div className={styles.wrapper}>
+      <button
+        onClick={() => addToFavourites(product.id)}
+        className={`${styles.iconWrapper} ${styles.iconWrapper__favourites}`}
+      >
+        { inFavourites(product.id) ?
+          <AiFillHeart className={`${styles.icon} ${styles.icon_like}`} /> :
+          <AiOutlineHeart className={`${styles.icon} ${styles.icon_like}`} /> }
+      </button>
+      <button
+        onClick={() => addToCart(product.id)}
+        className={`${styles.iconWrapper} ${styles.iconWrapper__shopCart}`}
+      >
+        { inCart(product.id) ?
+          <BsBagDashFill className={`${styles.icon} ${styles.icon_cart}`} /> :
+          <BsBag className={`${styles.icon} ${styles.icon_cart}`} /> }
+      </button>
+      <Link href={`product/${product.id}`} className={styles.card}>
+        <div className={styles.image_wrap}>
+          <Image
+            src={product.image}
+            width={200}
+            height={200}
+            alt='Product Image'
+            className={styles.image}
+          />
+        </div>
+        <div className={styles.meta}>
+          <p className={styles.meta_title}>{sliceTitle(product.title)}</p>
+          <p className={styles.meta_price}>{`$${product.price}`}</p>
+        </div>
+      </Link>
+    </div>
   );
 };
 

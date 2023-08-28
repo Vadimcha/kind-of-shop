@@ -17,9 +17,15 @@ const Bottom = ({ productId, price }: { productId: number, price: number }) => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.socialLinks}>
-        <AiFillInstagram className={styles.icon} />
-        <AiOutlineTwitter className={styles.icon} />
-        <AiFillFacebook className={styles.icon} />
+        <Link href={''} style={{width: 'fit-content'}}>
+          <AiFillInstagram className={styles.icon} />
+        </Link>
+        <Link href={''} style={{width: 'fit-content'}}>
+          <AiOutlineTwitter className={styles.icon} />
+        </Link>
+        <Link href={''} style={{width: 'fit-content'}}>
+          <AiFillFacebook className={styles.icon} />
+        </Link>
       </div>
 
       <div className={`${styles.container} ${bebas.className}`}>
