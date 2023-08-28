@@ -9,9 +9,11 @@ import {
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
+import { useUserStore } from '@/store/userStore';
 
 const Bottom = ({ productId, price }: { productId: number, price: number }) => {
   const router = useRouter();
+  const { addToCart, inCart } = useUserStore();
   return (
     <div className={styles.wrapper}>
       <div className={styles.socialLinks}>
@@ -49,7 +51,9 @@ const Bottom = ({ productId, price }: { productId: number, price: number }) => {
             />
           </Link>
         </div>
-        <button>Add to cart — ${price}</button>
+        { inCart(productId) ?
+          <button onClick={() => addToCart(productId)}>Remove from cart</button> :
+          <button onClick={() => addToCart(productId)}>Add to cart — ${price}</button> }
       </div>
     </div>
   );
