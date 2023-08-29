@@ -1,0 +1,102 @@
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.form {
+  width: 50vw;
+  height: 100vh;
+
+  padding: 100px 160px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &_title {
+    font-size: 50px;
+    font-weight: 500;
+    margin-bottom: 70px;
+  }
+  &_formBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  &_button {
+    font-size: 17px;
+    font-weight: 500;
+    background-color: #fff;
+    color: black;
+    padding: 20px 0;
+    width: 400px;
+    border-radius: 10px;
+    &:hover {
+      color: black;
+      background-color: #D9D9D9;
+    }
+  }
+  &_help {
+    margin-top: 15px;
+    color: #AAAAAA;
+    font-size: 16px;
+    font-weight: 500;
+    &_link {
+      text-decoration: underline;
+    }
+  }
+}
+
+.imgBlock {
+  width: 50vw;
+  height: 100vh;
+  color: black;
+  padding: 100px 65px;
+  .title {
+    font-size: 50px;
+    font-weight: 500;
+    margin-bottom: 75px;
+  }
+  .dscr {
+    font-size: 24px;
+  }
+}
+
+.inputBlock {
+  position: relative;
+
+  .label {
+    transition: all .2s ease-in-out;
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    top: -10px;
+    left: 10px;
+    padding: 0 2px;
+    background-color: #131212;
+    &__active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+  }
+
+  .field {
+    transition: all .2s ease-in-out;
+    width: 400px;
+
+    border: 1px solid #AAAAAA;
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 19px;
+    font-weight: 500;
+    &::placeholder {
+      color: #AAAAAA;
+      font-size: 17px;
+    }
+    &__active {
+      border-color: white;
+    }
+  }
+}
+

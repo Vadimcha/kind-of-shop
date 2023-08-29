@@ -8,7 +8,7 @@ const Meta = ({ product }: {product: IProduct}) => {
   return (
     <div className={styles.meta}>
       <p className={`${bebas.className} ${styles.category}`}>
-        <Link href={''}>
+        <Link href={`${process.env.NEXT_PUBLIC_URL}?filters=${product.category}`}>
           {product.category}
         </Link>
       </p>
