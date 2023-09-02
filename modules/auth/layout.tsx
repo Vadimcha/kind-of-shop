@@ -1,10 +1,16 @@
 import styles from './layout.module.scss';
 import Image from 'next/image';
 import { figtree } from '@/pages/fonts';
+import Link from 'next/link';
+import { BsFillArrowLeftCircleFill } from 'react-icons/bs';
 
 const AuthLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <div className={`${styles.wrapper} ${figtree.className}`}>
+      <Link href={`${process.env.NEXT_PUBLIC_URL}`} className={styles.back}>
+        <BsFillArrowLeftCircleFill className={styles.back_icon} />
+        <p className={styles.back_text}>Back to main</p>
+      </Link>
       <div className={styles.form}>
         {children}
       </div>

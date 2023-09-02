@@ -4,6 +4,7 @@ import { devtools } from 'zustand/middleware';
 import { mountStoreDevtool } from 'simple-zustand-devtools';
 
 interface UserStore {
+  auth: boolean,
   favourites: number[],
   shopCart: number[],
   addToFavourites: (id: number) => void,
@@ -14,6 +15,7 @@ interface UserStore {
 
 export const useUserStore = create<UserStore>()(
   devtools((set, get) => ({
+    auth: false,
     favourites: [],
     shopCart: [],
     addToFavourites: (id: number) => {

@@ -2,6 +2,7 @@
 import styles from '../layout.module.scss';
 import Link from 'next/link';
 import { useFormik } from 'formik';
+import Head from 'next/head';
 
 const SignIn = () => {
   const formik = useFormik({
@@ -16,6 +17,9 @@ const SignIn = () => {
   });
   return (
     <>
+      <Head>
+        <title>Kind of shop | Sign In</title>
+      </Head>
       <p className={styles.form_title}>Create Account</p>
       <form className={styles.form_formBlock}>
         <div className={styles.inputBlock}>
@@ -64,7 +68,7 @@ const SignIn = () => {
         <button type='submit' className={styles.form_button}>Create account</button>
       </form>
       <p className={styles.form_help}>
-        Already have an account?
+        Already have an account? {' '}
         <Link href={`${process.env.NEXT_PUBLIC_URL}/logIn`} className={styles.form_help_link}>
           <span style={{ textDecoration: 'underline' }}>Log in</span>
         </Link>

@@ -7,8 +7,10 @@ import { INavLink, navLinks } from '@/components/Header/links';
 import styles from './header.module.scss';
 import { bebas } from '@/pages/fonts';
 import { CgProfile } from 'react-icons/cg';
+import { useUserStore } from '@/store/userStore';
 
 const Header = () => {
+  const { auth } = useUserStore();
   return (
     <header className={styles.header}>
       <Link href={'/'}>
@@ -27,10 +29,17 @@ const Header = () => {
           </li>
         ) }
       </ul>
-      <div>
-        <button><CgProfile className={styles.icon} /></button>
-        <button><BiShoppingBag className={styles.icon} /></button>
-      </div>
+      { auth ?
+        <div>
+          <button><CgProfile className={styles.icon} /></button>
+          <button><BiShoppingBag className={styles.icon} /></button>
+        </div> :
+        <div>
+          <Link href={`${process.env.NEXT_PUBLIC_URL}logIn`} className={styles.auth_btn}>Login</Link>
+          <Link href={`${process.env.NEXT_PUBLIC_URL}signIn`} className={styles.auth_btn}>Register</Link>
+        </div>
+      }
+
     </header>
   );
 };

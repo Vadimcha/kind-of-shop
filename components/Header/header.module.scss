@@ -19,3 +19,16 @@
     margin-left: 35px;
   }
 }
+.auth_btn {
+  padding:  8px 14px;
+  border-radius: 5px;
+  background-color: #fff;
+  color: black;
+  &:last-child {
+    margin-left: 10px;
+  }
+  &:hover {
+    background-color: #bcbcbc;
+    color: black;
+  }
+}

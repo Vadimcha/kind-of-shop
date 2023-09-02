@@ -41,11 +41,11 @@ const ProductCard = (product: IProduct) => {
       <Link href={`product/${product.id}`} className={styles.card}>
         <div className={styles.image_wrap}>
           <Image
+            className={styles.image}
             src={product.image}
             width={200}
             height={200}
             alt='Product Image'
-            className={styles.image}
           />
         </div>
         <div className={styles.meta}>

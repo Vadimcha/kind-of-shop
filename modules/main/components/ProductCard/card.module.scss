@@ -5,6 +5,9 @@
       pointer-events: auto;
       opacity: 100%;
     }
+    .image {
+      filter: brightness(80%);
+    }
   }
 }
 
@@ -30,6 +33,7 @@
 }
 
 .image {
+  transition: all .2s ease-in-out;
   max-height: 200px;
   width: auto;
 }
